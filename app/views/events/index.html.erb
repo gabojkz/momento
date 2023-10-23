@@ -1,0 +1,36 @@
+<div class="bg-gray-100 py-8">
+  <div class="container mx-auto">
+    <div class="flex justify-center">
+      <div class="w-full max-w-md">
+        <form action="/" method="get">
+          <div class="mb-4">
+            <input
+              type="text"
+              name="event_type"
+              placeholder="Event Type"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              name="event_location"
+              placeholder="Event Location"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+          <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <% @events.each do |event| %>
+        <div class="bg-white p-4 rounded shadow">
+          <%= image_tag("party.jpg", class: "w-full h-48 object-cover mb-4") %>
+          <h2 class="text-xl font-semibold"><%= event.title %></h2>
+          <p class="text-gray-600"><%= event.date %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
