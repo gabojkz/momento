@@ -1,9 +1,9 @@
-<h1>New event</h1>
+<div class="max-w-2xl mx-auto p-4">
+  <h1 class="text-3xl font-semibold mb-4">New Event</h1>
 
-<%= render "form", event: @event %>
+  <%= render "form", event: @event %>
 
-<br>
-
-<div>
-  <%= link_to "Back to events", events_path %>
+  <div class="mt-4">
+    <%= link_to "Back to events", events_path, class: "text-blue-500 hover:underline" %>
+  </div>
 </div>

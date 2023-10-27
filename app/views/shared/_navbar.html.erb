@@ -1,0 +1,34 @@
+<!-- app/views/shared/_navbar.html.erb -->
+<nav class="bg-black text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="text-xl font-semibold">
+      <%= link_to "Momento", root_path, class: "text-white" %>
+    </div>
+    <div class="lg:flex space-x-4">
+      <% if user_signed_in? %>
+        <div class="relative group">
+          <%= link_to "New Event", new_event_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+
+          <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="button">
+              <%= current_user.email %>
+            </svg>
+          </button>
+          <div id="dropdown" class="z-10 hidden bg-white text-black divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                  <li><%= link_to "Tickets", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover"%></li>
+                  <li><%= link_to "Manage Events", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover" %></li>
+                  <li><%= link_to "Account Settings", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover" %></li>
+              </ul>
+          </div>
+          <ul class="hidden absolute right-0 mt-2 space-y-2 bg-black text-white p-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 transform scale-95 group-hover:scale-100">
+
+          </ul>
+        </div>
+        <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete, data_turbo: 'false' } %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "text-white" %>
+        <%= link_to "Create Account", new_user_registration_path, class: "text-white" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

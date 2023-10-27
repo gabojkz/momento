@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_130533) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_193524) do
   create_table "event_tags", force: :cascade do |t|
     t.integer "event_id", null: false
     t.integer "tag_id", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_130533) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "cost"
   end
 
   create_table "tags", force: :cascade do |t|
