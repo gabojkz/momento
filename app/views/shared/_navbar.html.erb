@@ -7,14 +7,14 @@
     <div class="lg:flex space-x-4">
       <% if user_signed_in? %>
         <div class="relative group">
-          <%= link_to "New Event", new_event_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <%= link_to "New Event", new_event_path, class: "text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
 
-          <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="button">
+          <a id="dropdownDefaulta" data-dropdown-toggle="dropdown" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="a">
               <%= current_user.email %>
             </svg>
-          </button>
+          </a>
           <div id="dropdown" class="z-10 hidden bg-white text-black divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaulta">
                   <li><%= link_to "Tickets", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover"%></li>
                   <li><%= link_to "Manage Events", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover" %></li>
                   <li><%= link_to "Account Settings", "#", class: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover" %></li>
